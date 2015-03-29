@@ -17,3 +17,19 @@ figure > img {
 figurecaption {
 	display: block;
 }
+
+table{
+	border-collapse: collapse;
+}
+
+th, td{
+    border : 1px solid;
+}
+
+.odd {
+    background: #aee0f9;
+}
+
+.even{
+    background: #0eb0ff;
+}

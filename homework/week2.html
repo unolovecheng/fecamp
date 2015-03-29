@@ -79,10 +79,7 @@
         var 타이머 = 남은시간 + '시간 ' + 남은분 + '분 ' + 남은초 + '초';
         
         log(타이머);
-    }
-    function showTimer(){
-        countDown(2015, 3, 26, 13);
-        setTimeout(arguments.callee, 1000);
+        setTimeout(function(){countDown(year, month, date, hour);}, 1000);
     }
 	</script>
 </head>
