@@ -75,6 +75,9 @@ function Triangle(밑변, 높이)
     this.밑변 = 밑변;
     this.높이 = 높이;
 }
+
+// 인스턴스(instance) : 클래스(class) 또는 타입(type)을 사용해 구체적인 고유 데이터로 만든 것
+// 이 때, 인스턴스를 만드는 과정에는 new 연산자가 사용되며 이 과정을 가르켜 인스턴스화(instantiation)라고 한다.
 Triangle.prototype = {
     넓이 : function(){
         return this.밑변 * this.높이 / 2;
