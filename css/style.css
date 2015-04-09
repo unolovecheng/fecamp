@@ -18,31 +18,16 @@ figurecaption {
 	display: block;
 }
 
-table{
-	border-collapse: collapse;
+p code {
+	color : #f00;
 }
 
-th, td{
-    border : 1px solid;
-}
-
-.odd {
-    background: #aee0f9;
-}
-
-.even{
-    background: #0eb0ff;
-}
-
-p code{
-    color: #f00;
-}
 #box {
-    position: absolute;
-    top: 100px;
-    left: 50px;
-    width: 100px;
-    height: 100px;
-    background: #ccc;
-    border: 1px solid #777;
+	position: absolute;
+	top: 100px;
+	left: 50px;
+	width: 100px;
+	height: 100px;
+	background: #ccc;
+	border:1px solid #777;
 }
