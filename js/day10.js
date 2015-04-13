@@ -78,4 +78,26 @@ jQuery(function($){
        $(this).addClass('header');
         console.log($('#box').offset().top);
     });
+    $('.top').on('click', function(event){
+        event.preventDefault();
+        $('html,body').animate({'scrollTop': 0}, 200);
+    });
+    
+    // 문제: <a>태그를 모두 선택한 후 <i class="fa fa-external-link"></i> 태그를 
+    // 선택한 <a>태그의 마지막 자식 요소로 추가하라.
+    $('a[href^="http:"]').attr('target', '_blank').append('<i class="fa fa-external-link"></i>');
+    //$('<i class="fa fa-external-link"></i>').appendTo('a');
+    
+    $('#tab').on('click', ' li a',function(event){
+        event.preventDefault();
+        var $this = $(this);
+        $this
+            .parent('li')
+                .siblings().removeClass('active')
+            .end()
+            .addClass('active');
+        $($this.attr('href')).siblings().removeClass('active').end().addClass('active');
+            
+    });
+       
 });

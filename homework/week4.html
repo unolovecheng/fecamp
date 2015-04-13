@@ -23,42 +23,33 @@
 	// 사용예:
 	//   isZipCode('200-333) // true 반환
 	//   isZipCode('200-33') // false 반환
-    function isZipCode(zipCode){
-        if(zipCode.length != 7){
-            return false;
-        }
-        var regex = new RegExp('[1-9][0-9]{2}-[0-9]{3}');
-        return regex.test(zipCode);
-    }
-    console.log(isZipCode('110-323'));
-	console.log(isZipCode('200-33'));
-
+	function isZipCode(우편번호){
+		if(우편번호.length !== 7) return false;
+		var regex = new RegExp('[1-9][0-9]{2}-[0-9]{3}');
+		return regex.test(우편번호);
+	}
 	// 문제2: 인수로 전달한 아이디를 가진 입력 폼에 "성공!"이라는 문자열을 출력하는 성공() 함수를 작성하라.
 	// 사용예:
 	//    성공('text1');
-    function 성공(아이디){
-        var 입력폼 = document.getElementById(아이디);
-        입력폼.value = '성공!';
-    }
-    window.onload = function(){
-        성공('name');
-    }
-
+	function 성공(아이디){
+		var elem = document.getElementById(아이디);
+		elem.value = '성공!';
+	}
 	// 문제3: jQuery를 사용해 아이디가 box인 엘리먼트에 이벤트 리스너를 추가하라.
 	// 단, 상자는 그냥 클릭하면 오른쪽으로 10픽셀 이동하고 Alt 키를 누른채 클릭하면 왼쪽으로 10픽셀 이동해야 한다.
 	// 힌트1: 이벤트 객체의 altKey 프로퍼티를 사용하면 Alt 키가 눌렸는지 확인할 수 있습니다.
 	// 힌트2: 문자열을 숫자로 변환하는 과정이 필요할 것입니다.
-    jQuery(function($){ 
-    $('#box').on('click', function(event){
-        var left = parseInt($(this).css('left'));
-        if(event.altKey){
-            $(this).css('left', left-10+'px');
-        } else {
-            $(this).css('left', left+10+'px');
-        }
-    });
-});
-    
+	jQuery(function($){
+		event.preventDefault();
+		$('#box').on('click', function(event){
+			var left = parseInt($(this).css('left'));
+			if(event.altKey){
+				$(this).css('left', left-10);
+			} else {
+				$(this).css('left', left+10);
+			}
+		});
+	});
 	</script>
 </head>
 <body>
