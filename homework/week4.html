@@ -24,8 +24,7 @@
 	//   isZipCode('200-333) // true 반환
 	//   isZipCode('200-33') // false 반환
 	function isZipCode(우편번호){
-		if(우편번호.length !== 7) return false;
-		var regex = new RegExp('[1-9][0-9]{2}-[0-9]{3}');
+		var regex = new RegExp('^[1-9][0-9]{2}-[0-9]{3}$');
 		return regex.test(우편번호);
 	}
 	// 문제2: 인수로 전달한 아이디를 가진 입력 폼에 "성공!"이라는 문자열을 출력하는 성공() 함수를 작성하라.
@@ -42,11 +41,12 @@
 	jQuery(function($){
 		event.preventDefault();
 		$('#box').on('click', function(event){
+            var $this = $(this);
 			var left = parseInt($(this).css('left'));
 			if(event.altKey){
-				$(this).css('left', left-10);
+				$this.css('left', left-10);
 			} else {
-				$(this).css('left', left+10);
+				$this.css('left', left+10);
 			}
 		});
 	});
