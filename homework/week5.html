@@ -74,11 +74,12 @@
 		$(document).on('scroll', function(event){
 			var 남은높이 = $(document).height() - $(document).scrollTop() - $(window).height();
 			if(남은높이 < 100){
-				$stream.append($items.clone().fadeIn(1000));
-                var $title = $stream.find('.title');
-                $title.each(function(index){
-                   $(this).text('아이템#'+(index+1)); 
-                });
+				var idx = $stream.find('>li').length + 1;
+				$stream.append(
+					$items.clone()
+						.find('.title').each(function(index){$(this).text('아이템#'+(index+idx));})
+						.end().fadeIn(1000)
+				);
 			}
 		});
 		// ADV: 위 과제를 해결한 후 고급 도전 과제가 필요한 분은 영상 마지막에 보이는 것처럼
